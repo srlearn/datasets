@@ -1,0 +1,15 @@
+mode: Enzyme(-enzyme,+drug).
+mode: Target(-target,+drug).
+mode: Transporter(-transporter,+drug).
+mode: EnzymeSubstrate(+drug,-enzyme).
+mode: EnzymeInhibitor(+drug,-enzyme).
+mode: EnzymeInducer(+drug,-enzyme).
+mode: TargetSubstrate(+drug,-target).
+mode: TargetAntagonist(+drug,-target).
+mode: TargetInducer(+drug,-target).
+mode: TargetInhibitor(+drug,-target).
+mode: TargetAgonist(+drug,-target).
+mode: TransporterSubstrate(+drug,-transporter).
+mode: TransporterInhibitor(+drug,-transporter).
+mode: TransporterInducer(+drug,-transporter).
+mode: Interacts(+drug,+drug).
