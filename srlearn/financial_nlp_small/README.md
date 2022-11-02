@@ -8,6 +8,17 @@ with [`rnlp`](https://github.com/hayesall/rnlp/).
 
 **Binary Classification**: Is the sentence a primary share?
 
+```prolog
+wordstringinsentence(+sentenceid,+wordid,#wordstring).
+lemmaofwordinsentence(+sentenceid,+wordid,#wordlemma).
+beginningwordinsentence(+sentenceid,-wordid).
+midwordinsentence(+sentenceid,-wordid).
+endingwordinsentence(+sentenceid,-wordid).
+nextwordinsentence(+sentenceid,+wordid,-wordid).
+nextwordinsentence(+sentenceid,-wordid,+wordid).
+sentencecontainstarget(+sentenceid,+wordid).
+```
+
 ## Publications
 
 - Dhami, D.S., & Kunapuli, G., & Natarajan, S., Efficient Learning of Relational Gaifman Models using Probabilistic Logic, Workshop on Probabilistic Logic Programming (PLP) 2019.
