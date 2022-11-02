@@ -1,0 +1,13 @@
+highpoint(v164).
+highpoint(v167).
+highpoint(v170).
+highpoint(v173).
+highpoint(v175).
+highpoint(v176).
+highpoint(v181).
+highpoint(v184).
+highpoint(v188).
+highpoint(v192).
+highpoint(v194).
+highpoint(v202).
+highpoint(v203).
