@@ -1,0 +1,7 @@
+highpoint(+node).
+connected(+node,-node).
+connected(-node,+node).
+nneighbors(+node,#neighborcount).
+angledegrees(+node,+node,-node,#angletype).
+angledegrees(+node,-node,+node,#angletype).
+angledegrees(+node,-node,-node,#angletype).
