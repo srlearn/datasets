@@ -37,6 +37,39 @@ columns may take surpinsingly large values for block groups with few households
 and many empty houses, such as vacation resorts.
 ```
 
+## Creating Folds
+
+Something similar to the dataset shown here can also be created with the scikit-learn `fetch_california_housing` method. For example, the following shows how to split the dataset into five folds and create `train` and `test` objects.
+
+```python
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import KFold
+from sklearn.preprocessing import KBinsDiscretizer
+from relational_datasets.convert import from_numpy
+
+housing = fetch_california_housing()
+
+X, y = housing.data, housing.target
+
+variable_names = [
+    "med_inc", "house_age", "ave_rooms",
+    "ave_bedrms", "population", "ave_occup",
+    "latitude", "longitude", "med_house_val",
+]
+
+disc = KBinsDiscretizer(n_bins=5, encode="ordinal")
+
+for i, (train_ind, test_ind) in enumerate(KFold(n_splits=5).split(X)):
+
+    X_train = disc.fit_transform(X[train_ind]).astype(int)
+    X_test = disc.transform(X[test_ind]).astype(int)
+
+    train, modes = from_numpy(X_train, y[train_ind], names=variable_names)
+    test, _ = from_numpy(X_test, y[test_ind], names=variable_names)
+
+print("\n".join(modes))
+```
+
 ## References
 
 - Pace, R. Kelley and Ronald Barry, Sparse Spatial Autoregressions,
